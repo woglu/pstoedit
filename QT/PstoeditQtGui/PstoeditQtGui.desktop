@@ -6,4 +6,5 @@ Terminal=false
 Type=Application
 Icon=pstoedit
 Categories=Utility;Graphics;VectorGraphics;ImageProcessing
+Keywords=PostScript;PDF;vector;convert;ps;
 X-Desktop-File-Install-Version=0.27

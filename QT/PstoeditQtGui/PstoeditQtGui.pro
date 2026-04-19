@@ -21,6 +21,9 @@ FORMS += \
 RESOURCES += PstoeditQtGui.qrc
 
 LIBS +=  -Wl,-rpath,`pwd`/../../src/.libs/ -L../../src/.libs -lpstoedit
+QMAKE_LFLAGS += $$(LDFLAGS)
+QMAKE_CFLAGS += $$(CFLAGS)
+QMAKE_CXXFLAGS += $$(CXXFLAGS)
 
 INCLUDEPATH += ../../src
 
