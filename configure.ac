@@ -41,6 +41,17 @@ dnl seems to be broken : AC_LIBTOOL_TAGS([CXX])
 dnl Check for various programs the Makefile needs.
 AC_PROG_CC
 AC_PROG_CXX
+dnl Work around bug in autoconf 2.72; note: fixed in autoconf 2.73.
+dnl
+dnl AC_PROG_CXX's C++11 detection test uses u8"..." string literals,
+dnl which changed from const char* to const char8_t* in C++20, causing
+dnl the test to fail with a C++20-defaulting compiler (e.g., GCC-16)
+dnl and making autoconf fall back to -std=gnu++11. Strip whatever
+dnl -std= flag it may have added and explicitly require C++17 or later
+dnl instead.
+CXX="$(echo "${CXX}" | sed 's/ -std=[[^ ]]*//g')"
+CXXCPP="$(echo "${CXXCPP}" | sed 's/ -std=[[^ ]]*//g')"
+AX_CXX_COMPILE_STDCXX([17], [], [mandatory])
 
 AC_MSG_CHECKING(for g++ std)
 AC_COMPILE_IFELSE([AC_LANG_SOURCE([[ constexpr int ce = 10; int * p = nullptr; ]])],
