@@ -55,8 +55,8 @@ AX_CXX_COMPILE_STDCXX([17], [], [mandatory])
 
 AC_MSG_CHECKING(for g++ std)
 AC_COMPILE_IFELSE([AC_LANG_SOURCE([[ constexpr int ce = 10; int * p = nullptr; ]])],
-               [AC_MSG_RESULT(you seem to have suitable version of g++)],
-               [AC_MSG_ERROR([your version of g++ seems to be too old.])])
+               [AC_MSG_RESULT(You seem to have suitable version of g++)],
+               [AC_MSG_ERROR([Your version of g++ seems to be too old.])])
 
 AC_PROG_AWK
 AC_PROG_YACC
@@ -187,8 +187,8 @@ if test -n "${LIBPLOTTER_LDFLAGS}" && test -n "${LIBPLOTTER_CFLAGS}"; then
    AC_COMPILE_IFELSE([AC_LANG_PROGRAM([[
 		#include <plotter.h>
 	     	typedef int Point; 
-		]], [[ ]])],[AC_MSG_RESULT(you seem to have a compatible version )],[LIBPLOTTER_CFLAGS="$LIBPLOTTER_CFLAGS -DOLD_LIBPLOTTER";   
-		    AC_MSG_RESULT(you seem to have an older version - need at least version 2.3)])
+		]], [[ ]])],[AC_MSG_RESULT(You seem to have a compatible version )],[LIBPLOTTER_CFLAGS="$LIBPLOTTER_CFLAGS -DOLD_LIBPLOTTER";   
+		    AC_MSG_RESULT(You seem to have an older version - need at least version 2.3)])
    AC_MSG_RESULT([** libplotter driver is enabled.])
 else
    LIBPLOTTER_LDFLAGS=
@@ -218,10 +218,10 @@ if test "${QMAKE6FOUND}"; then
    QHEADERDIR=`echo "$QHEADERS" | sed s/-I//g`
    if test -f "$QHEADERDIR/QtWidgets/QMainWindow" ; then
      HAVE_QT=yes;
-     AC_MSG_RESULT(you seem to have QT headers)
+     AC_MSG_RESULT(You seem to have QT headers)
      AC_MSG_RESULT([** separate GUI enabled.])
    else
-     AC_MSG_RESULT(you do no have QT headers. Cannot build the GUI.)
+     AC_MSG_RESULT(You do not have QT headers. Cannot build the GUI.)
    fi
 
 dnl   CPPFLAGS="$CPPFLAGS -I$QHEADERS"
@@ -229,12 +229,12 @@ dnl   echo "WWWWW CPPFLAGS=$CPPFLAGS"
 dnl   AC_PREPROC_IFELSE([AC_LANG_PROGRAM([[
 dnl		#include <QtWidgets/QMainWindow>
 dnl		]], [[ ]])],
-dnl	[HAVE_QT=yes;AC_MSG_RESULT(you seem to have QT headers)],
-dnl      [HAVE_QT=no;AC_MSG_RESULT(you do no have QT headers)])
+dnl	[HAVE_QT=yes;AC_MSG_RESULT(You seem to have QT headers)],
+dnl      [HAVE_QT=no;AC_MSG_RESULT(You do no have QT headers)])
 dnl   AC_COMPILE_IFELSE([AC_LANG_PROGRAM([[
 dnl		#include <QtWidgets/QMainWindow>
 dnl		]], [[ ]])],
-dnl		[HAVE_QT=yes;AC_MSG_RESULT(you seem to have QT headers );AC_MSG_RESULT([** QT GUI is enabled.])],
+dnl		[HAVE_QT=yes;AC_MSG_RESULT(You seem to have QT headers );AC_MSG_RESULT([** QT GUI is enabled.])],
 dnl		[AC_MSG_RESULT(QT headers not found)])
 dnl    CPPFLAGS=${OLD_CPPFLAGS}
 else
@@ -255,7 +255,7 @@ AC_COMPILE_IFELSE([AC_LANG_PROGRAM([[#include <stdlib.h>
 		 char buffer[] = "aaaXXXXXX";
 	 	 int i = mkstemp(buffer); ]], [[ ]])],[HAVE_MKSTEMP=yes;
                 MKSTEMP_CFLAGS="-DHAVE_MKSTEMP"; 
-                AC_MSG_RESULT(you seem to have mkstemp )],[AC_MSG_RESULT(you do not have mkstemp - so will try using tempnam instead)])
+                AC_MSG_RESULT(You seem to have mkstemp )],[AC_MSG_RESULT(You do not have mkstemp - so will try using tempnam instead)])
 
 AC_SUBST(MKSTEMP_CFLAGS)
 
@@ -368,7 +368,7 @@ else
 	 	    int correct;
 	  	    #else
 	  	    old version of GraphicsMagick;
-	  	    #endif ]], [[ ]])],[MAGICKCORRECTVERSION="YES";AC_MSG_RESULT(you seem to have a compatible version )],[AC_MSG_RESULT(you seem to have an older version - need at least version 1.0.6)])
+	  	    #endif ]], [[ ]])],[MAGICKCORRECTVERSION="YES";AC_MSG_RESULT(You seem to have a compatible version )],[AC_MSG_RESULT(You seem to have an older version - need at least version 1.0.6)])
 	   CPPFLAGS=$OLD_CPPFLAGS
 	   if test -n "${MAGICKCORRECTVERSION}"; then
 	      HAVE_LIBMAGICK=yes
@@ -496,7 +496,7 @@ dnl OBS: AC_COMPILE_IFELSE([AC_LANG_PROGRAM([[#include <png.h>
 dnl OBS: 	 	 int i = PNG_TRANSFORM_IDENTITY; ]], [[ ]])],[dnl OBS:                HAVE_LIBPNG=yes;
 dnl OBS:                 LIBPNG_CFLAGS="-DHAVE_LIBPNG"; 
 dnl OBS:                 LIBPNG_LDFLAGS="-lpng -lz ";
-dnl OBS:                 AC_MSG_RESULT(you seem to have compatible version of libpng)],[dnl OBS:                AC_MSG_RESULT(you either have no libpng or an old version - 1.0.8 should be ok.)])
+dnl OBS:                 AC_MSG_RESULT(You seem to have compatible version of libpng)],[dnl OBS:                AC_MSG_RESULT(You either have no libpng or an old version - 1.0.8 should be ok.)])
 dnl OBS: AC_SUBST(LIBPNG_LDFLAGS)
 dnl OBS: AC_SUBST(LIBPNG_CFLAGS)
 dnl OBS: AM_CONDITIONAL(HAVE_LIBPNG, test "$HAVE_LIBPNG" = yes)
