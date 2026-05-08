@@ -324,7 +324,7 @@ GSDLLEXPORT int GSDLLAPI gsapi_init_with_argsW(void *instance,
  * The gsapi_run_* functions are like gs_main_run_* except
  * that the error_object is omitted.
  * If these functions return <= -100, either quit or a fatal
- * error has occured.  You then call gsapi_exit() next.
+ * error has occurred.  You then call gsapi_exit() next.
  * The only exception is gsapi_run_string_continue()
  * which will return gs_error_NeedInput if all is well.
  */

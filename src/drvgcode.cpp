@@ -49,7 +49,7 @@ void drvGCODE::open_page()
 // This is a hack
 // Since Windows CE does not support, I am just putting a dummy date(i.e "01/01/18 09:00:00")
 #ifndef OS_WIN32_WCE
-	//date and time of convertion
+	//date and time of conversion
 	const time_t kz = time(nullptr);
 	static char sdate[30];
 	sdate[0] = 0;

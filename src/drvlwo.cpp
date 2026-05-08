@@ -120,7 +120,7 @@ void drvLWO::print_coords()
 	p->r = (unsigned char) (255.0 * currentR());
 	p->g = (unsigned char) (255.0 * currentG());
 	p->b = (unsigned char) (255.0 * currentB());
-	p->num = 0;					// intial value;
+	p->num = 0;					// initial value;
 //  p->num = numberOfElementsInPath();
 	p->x = new float[numberOfElementsInPath()];	// allocate a conservative amount
 	p->y = new float[numberOfElementsInPath()];	// allocate a conservative amount
