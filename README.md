@@ -27,8 +27,8 @@ Some features that are not supported by every backend of pstoedit:
 * clipping (only partially via the -sclip option)
 
 
-## Dependendies
-### Build time Dependendies
+## Dependencies
+### Build time Dependencies
 
 The configure script checks for the availability of several third party components and configures the build process accordingly. The following components are being checked:
 
@@ -42,7 +42,7 @@ The configure script checks for the availability of several third party componen
 see also the [recommended apt packages](doc/pstoedit.linux.prerequisites.md)
 
 
-### Run time Dependendies
+### Run time Dependencies
 
 The most important one is GhostScript. You need a working installation of this PostScript interpreter.
 
