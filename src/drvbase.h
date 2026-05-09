@@ -857,7 +857,7 @@ typedef drawingelement<(unsigned int) 3,curveto> 	Curveto;
 //So drvbase ctor creates the option object via createDriveroptions even before the derived driver class
 //is created completely.
 //Note: an "option" object is also needed/created for help output without creating a derived driver object.
-//Instead of adding the Description of Driver option in to the derived driver class
+//Instead of adding the Description of Driver option into the derived driver class
 //we would need a new class, e.g. derived from driverdescription<T> and add the options there.
 //But that is a wider change involving many source files.
 

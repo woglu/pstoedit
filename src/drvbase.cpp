@@ -154,7 +154,7 @@ saveRestoreInfo(nullptr), currentSaveLevel(&saveRestoreInfo), page_empty(true), 
 		}
 	}
 
-    // now call the driver specific option parser.
+        // now call the driver specific option parser.
 	// Note: derived driver object does not yet exist at this point. 
 	// we are in base class ctor here. See also comment for
 	// constructBase
