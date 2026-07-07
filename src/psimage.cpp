@@ -245,7 +245,7 @@ unsigned char PSImage::getComponent(unsigned int x, unsigned int y, char numComp
 	// which position?
 	const long tmp = (long) bits * ncomp * width;
 	const long paddedBytesPerRow = (tmp + 7) / 8;
-	const long pos = paddedBytesPerRow * 8 * y + bits * (ncomp * x + numComponent);
+	const long pos = paddedBytesPerRow * 8 * y + (long) bits * (ncomp * x + numComponent);
 
 	// which byte?
 	long bytePos = pos / 8;
@@ -486,8 +486,8 @@ void PSImage::writeIdrawImage(ostream & outi, float scalefactor) const
 	/* then flip images vertically by multiplying transformer */
 	/* by a vertical inverting affine transform of 1,0,0,-1,0,0 */
 	/* then add the original offset back in */
-	float scaledMatrix[6];
-	float finalMatrix[6];
+	float scaledMatrix[6] = {};
+	float finalMatrix[6]  = {};
 	{
 		for (unsigned int i = 0; i < 6; i++) {
 			scaledMatrix[i] = normalizedImageCurrentMatrix[i] * scalefactor;

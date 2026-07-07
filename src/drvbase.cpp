@@ -755,7 +755,7 @@ nrOfEntries(-1), numbers(nullptr), offset(0)
 		// now get the numbers
 		// repeat the numbers, if number of entries is odd
 		const unsigned int rep = nrOfEntries % 2;	// rep is 1 for odd numbers 0 for even
-		const size_t len = nrOfEntries * (rep + 1);
+		const size_t len = static_cast<size_t>(nrOfEntries) * static_cast<size_t>(rep + 1);
 		numbers = new float[len];
 		unsigned int cur = 0;
 #if 1

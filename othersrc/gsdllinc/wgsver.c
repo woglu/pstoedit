@@ -113,7 +113,7 @@ static int get_gs_versions_product(int *pver, int offset,
 #else
   const long regtestresult = RegOpenKeyExA(hkeyroot, key, 0, KEY_READ|regopenflags , &hkey);
 #endif
-  if (verbose) fprintf(stdout, " return code for \"%s\" %s is %d\n", key, debug_info, regtestresult);
+  if (verbose) fprintf(stdout, " return code for \"%s\" %s is %ld\n", key, debug_info, regtestresult);
   if (regtestresult == ERROR_SUCCESS) {
 	/* Now enumerate the keys */
   	cbData = sizeof(key) / sizeof(char);

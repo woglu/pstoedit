@@ -46,13 +46,11 @@ GSDLLCALL default_gs_addmess(void * /* cb_data */ , const char* text, int length
 {
 	// this default is just used in test environment. In real version, the output handler
 	// is set via pstoedit.c
-#define OUTPUTSTREAM stderr
 	// from pstoedit 3.50 on we redirect all stdout of ghostscript to stderr in order to avoid problems
 	// in case pstoedit's output is written to stdout (e.g. this is done if being called from inkscape)
-	//fprintf(OUTPUTSTREAM,"in default_gs_addmess\n");
 	if (text) {
-		fwrite(text,1,length,OUTPUTSTREAM);
-		fflush(OUTPUTSTREAM);
+		fwrite(text,1,length, stderr);
+		fflush(stderr);
 		return length;
 	} else {
 		return 0; 
