@@ -892,7 +892,7 @@ drvplot::derivedConstructor(drvplot):constructBase
 	if (d_argc) {
 		const unsigned int remaining = DOptions_ptr->parseoptions(errf,d_argc,d_argv);
 		if (Verbose()) { errf << "remaining options " << remaining << endl; }
-		const char * * remaining_argv = &(DOptions_ptr->unhandledOptions[0]);
+		const char * * remaining_argv = DOptions_ptr->unhandledOptions.data();
 		for (unsigned int i = 0; (i+1) < remaining; i+=2) {  // -1 because we also use argv[i+1]
 			if (strcmp(remaining_argv[i], "META_PORTABLE") == 0
 						&& strcmp(remaining_argv[i + 1], "yes") == 0)
